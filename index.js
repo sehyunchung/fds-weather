@@ -103,13 +103,13 @@ async function refreshWeather() {
     const userWeatherEmoji = document.querySelector('.weather-emoji');
     if (userTemp <= -15) {
       userWeatherEmoji.textContent = '☠️';
-    } else if (userTemp > -15 && userTemp <= 13) {
+    } else if (userTemp > -15 && userTemp <= -13) {
       userWeatherEmoji.textContent = '😱';
     } else if (userTemp > -13 && userTemp <= -10) {
       userWeatherEmoji.textContent = '🤬';
     } else if (userTemp > -10 && userTemp <= -6) {
       userWeatherEmoji.textContent = '😡';
-    } else if (userTemp > -6 && userTemp <= -3) {
+    } else if (userTemp > -6 && userTemp < 0) {
       userWeatherEmoji.textContent = '🤢';
     } else {
       userWeatherEmoji.textContent = '😌';
