@@ -29,7 +29,7 @@ table {
 
 html {
   font-size: 10px;
-  height: 100%;
+  /* height: 100%; */
 }
 body {
   font-family: 'Spoqa Han Sans', sans-serif;
@@ -76,38 +76,25 @@ a:hover, a:focus {
 
 @media screen and (max-width:1000px) {
   .wrapper {
-<<<<<<< HEAD
-    margin: 0, auto;
-    background-image: url(/img/ice-bg.jpg);
-    height: 100%;
-    background-size: 100%;
-=======
     height: 100%;
     margin: 0, auto;
->>>>>>> upstream/master
   }
   .container {
+    overflow: hidden;
     position: relative;
     color: #f8f9fa;
     text-align: center;
-<<<<<<< HEAD
-    /* background-repeat: no-repeat; */
-    /* width: 400px; */
-    /* height: 100%; */
-    min-width: 380px;
-    max-width: 1000px;
-=======
     background-image: url(/img/ice-bg.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     /* width: 400px; */
     height: 100%;
     min-width: 380px;
->>>>>>> upstream/master
     text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
   }
   h1 {
-    padding: 10px;
+    font-size: 2rem;
+    padding: 20px 0px 0px 0px;
   }
   .hidden {
     display: none;
@@ -126,6 +113,7 @@ a:hover, a:focus {
   }
   .temp-title {
     font-size: 3rem;
+    padding-right: 15px;
   }
   .temp-list {
     /* display: flex;
@@ -138,35 +126,16 @@ a:hover, a:focus {
     max-width: 300px;
   }
   .temp_min {
-<<<<<<< HEAD
-    line-height: 0.4;
-=======
     line-height: 0.5;
->>>>>>> upstream/master
     font-size: 14rem;
   }
   .temp-title, .temp {
     display: inline-block;
-<<<<<<< HEAD
-    padding-left: 20px;
-=======
->>>>>>> upstream/master
   }
   .buttons {
     /* margin: 0 auto; */
     margin: 35px 0px 45px 0px;
   }
-<<<<<<< HEAD
-  .button {
-    padding: 10px 40px 12px 40px;
-    color: #f8f9fa;
-    font-size: 2rem;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
-  }
-  .login-button {
-    background-color: #13bcd7;
-=======
   .login-button {
     background-color: #13bcd7;
     position: absolute;
@@ -176,13 +145,10 @@ a:hover, a:focus {
     border-radius: 10px;
     color: #f8f9fa;
     cursor: pointer;
->>>>>>> upstream/master
   }
   .weather-button {
     margin-left: 10px;
     background-color: #BC734C;
-<<<<<<< HEAD
-=======
     padding: 10px 40px 12px 40px;
     color: #f8f9fa;
     font-size: 2rem;
@@ -199,20 +165,18 @@ a:hover, a:focus {
     border-radius: 10px;
     color: #f8f9fa;
     cursor: pointer;
->>>>>>> upstream/master
   }
 }
 
 /* 웹 */
 
 @media screen and (min-width:1001px) {
-<<<<<<< HEAD
-=======
   .wrapper {
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
   }
   .container {
+    overflow: hidden;
     position: relative;
     color: #f8f9fa;
     left: 50%;
@@ -226,9 +190,8 @@ a:hover, a:focus {
     text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
   }
   h1 {
-    padding: 10px;
+    padding: 20px 0px 0px 0px;
   }
->>>>>>> upstream/master
   .hidden {
     display: none;
   }
@@ -263,10 +226,11 @@ a:hover, a:focus {
   }
   .temp-title, .temp {
     display: inline-block;
+    margin-right: 20px;
   }
   .buttons {
     /* margin: 0 auto; */
-    margin: 35px 0px 45px 0px;
+    margin: 35px 0px 50px 0px;
   }
   .login-button {
     background-color: #13bcd7;
@@ -275,6 +239,7 @@ a:hover, a:focus {
     left: 5px;
     width: 50px;
     border-radius: 10px;
+    /* padding: 5px 8px; */
     color: #f8f9fa;
     cursor: pointer;
   }
