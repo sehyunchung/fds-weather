@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url("normalize.css");
 *, *::before, *::after {
   box-sizing: border-box;
@@ -13,6 +14,8 @@ html, body, button, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ul {
   list-style: none;
@@ -28,7 +31,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: 'Noto Sans Regular', sans-serif;
+  font-family: 'Spoqa Han Sans', sans-serif;
   font-size: 1.4rem;
   color: #181818;
   background-color: #fff;
@@ -69,7 +72,27 @@ a:hover, a:focus {
 
 /* 모바일  */
 
-@media screen and (max-width:999px) {
+@media screen and (max-width:1000px) {
+  .wrapper {
+    margin: 0, auto;
+    background-image: url(/img/ice-bg.jpg);
+    height: 100%;
+    background-size: 100%;
+  }
+  .container {
+    position: relative;
+    color: #f8f9fa;
+    text-align: center;
+    /* background-repeat: no-repeat; */
+    /* width: 400px; */
+    /* height: 100%; */
+    min-width: 380px;
+    max-width: 1000px;
+    text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
+  }
+  h1 {
+    padding: 10px;
+  }
   .hidden {
     display: none;
   }
@@ -77,16 +100,58 @@ a:hover, a:focus {
     display: none;
   }
   #clock {
-    font-size: 30px;
+    margin-top: 8px;
+    font-size: 5rem;
+  }
+  .weather-emoji {
+    line-height: 1.5;
+    margin-top: -30px;
+    font-size: 18rem;
+  }
+  .temp-title {
+    font-size: 3rem;
   }
   .temp-list {
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
+    margin-top: 10px;
+    /* margin-bottom: 50px; */
+    font-size: 3rem;
+    color: #f8f9fa;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .temp_min {
+    line-height: 0.4;
+    font-size: 14rem;
+  }
+  .temp-title, .temp {
+    display: inline-block;
+    padding-left: 20px;
+  }
+  .buttons {
+    /* margin: 0 auto; */
+    margin: 35px 0px 45px 0px;
+  }
+  .button {
+    padding: 10px 40px 12px 40px;
+    color: #f8f9fa;
+    font-size: 2rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
+  }
+  .login-button {
+    background-color: #13bcd7;
+  }
+  .weather-button {
+    margin-left: 10px;
+    background-color: #BC734C;
   }
 }
 
 /* 웹 */
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1001px) {
   .hidden {
     display: none;
   }

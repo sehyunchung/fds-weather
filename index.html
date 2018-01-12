@@ -10,17 +10,20 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>겨울 싫어</h1>
-    <div id="clock"></div>
-    <ul class="temp-list">
-      <li class="temp_min"></li>
-      <li class="temp"></li>
-      <li class="temp_max"></li>
-    </ul>
-    <div class="buttons">
-      <button class="login-button">로그인</button>
-      <button class="weather-button">날씨 갱신</button>
+  <div class="wrapper">
+    <div class="container">
+      <h1>겨울 싫어!</h1>
+      <div id="clock"></div>
+      <div class="weather-emoji"></div>
+      <ul class="temp-list">
+        <li class="temp-list-item"><span class="temp-title">최저</span><span class="temp_min temp"></span>°C</li>
+        <li class="temp-list-item"><span class="temp-title">현재</span><span class="temp_now temp"></span>°C</li>
+        <li class="temp-list-item"><span class="temp-title">최고</span><span class="temp_max temp"></span>°C</li>
+      </ul>
+      <div class="buttons">
+        <button class="login-button button">로그인</button>
+        <button class="weather-button button">날씨 갱신</button>
+      </div>
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>

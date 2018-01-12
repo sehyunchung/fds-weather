@@ -3,7 +3,7 @@ const OWM_API_KEY = '282fbd093c4164283cf5b10e1b03a041';
 const provider = new firebase.auth.GoogleAuthProvider();
 const loginButton = document.querySelector('.login-button')
 const weatherButton = document.querySelector('.weather-button')
-const tempEl = document.querySelector('.temp')
+const tempEl = document.querySelector('.temp_now')
 const tempMaxEl = document.querySelector('.temp_max')
 const tempMinEl = document.querySelector('.temp_min')
 const dateTimeEl = document.querySelector('.date-time')
@@ -68,12 +68,29 @@ async function refreshWeather() {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=kr&APPID=${OWM_API_KEY}`) // 기본값이 get
     const userWeather = await res.json()
     console.log(userWeather)
+
     temp = userWeather.main.temp
     tempEl.textContent = userWeather.main.temp
     temp_max = userWeather.main.temp_max
     tempMaxEl.textContent = userWeather.main.temp_max
     temp_min = userWeather.main.temp_min
     tempMinEl.textContent = userWeather.main.temp_min
+
+    const userTemp = userWeather.main.temp;
+    const userWeatherEmoji = document.querySelector('.weather-emoji');
+    if (userTemp <= -15) {
+      userWeatherEmoji.textContent = '☠️';
+    } else if (userTemp > -15 && userTemp <= 13) {
+      userWeatherEmoji.textContent = '😱';
+    } else if (userTemp > -13 && userTemp <= -10) {
+      userWeatherEmoji.textContent = '🤬';
+    } else if (userTemp > -10 && userTemp <= -6) {
+      userWeatherEmoji.textContent = '😡';
+    } else if (userTemp > -6 && userTemp <= -3) {
+      userWeatherEmoji.textContent = '🤢';
+    } else {
+      userWeatherEmoji.textContent = '😌';
+    }
   });
 }
 
