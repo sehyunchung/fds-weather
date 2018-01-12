@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="buttons">
+      <button class="login-button">로그인</button>
+      <button class="weather-button">날씨 갱신</button>
+    </div>
+    <div class="temp"></div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDLoByBrRd-qIMhPAi8INWx06MKkLpm2uk",
+      authDomain: "fds-weather0.firebaseapp.com",
+      databaseURL: "https://fds-weather0.firebaseio.com",
+      projectId: "fds-weather0",
+      storageBucket: "fds-weather0.appspot.com",
+      messagingSenderId: "830399259268"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
