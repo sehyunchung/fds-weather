@@ -4,3 +4,9 @@
 .weather {
   display: none;
 }
+#clock {
+  font-size: 30px;
+}
+.temp-list {
+  display: flex;
+}

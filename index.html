@@ -11,11 +11,16 @@
 
 <body>
   <div class="container">
+    <div id="clock"></div>
     <div class="buttons">
       <button class="login-button">로그인</button>
       <button class="weather-button">날씨 갱신</button>
     </div>
-    <div class="temp"></div>
+    <ul class="temp-list">
+      <li class="temp_max"></li>
+      <li class="temp"></li>
+      <li class="temp_min"></li>
+  </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
   <script>
