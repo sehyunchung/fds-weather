@@ -2,17 +2,20 @@ const OWM_API_KEY = '282fbd093c4164283cf5b10e1b03a041';
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const loginButton = document.querySelector('.login-button')
+const logoutButton = document.querySelector('.logout-button')
 const weatherButton = document.querySelector('.weather-button')
-const tempEl = document.querySelector('.temp')
+const tempEl = document.querySelector('.temp_now')
 const tempMaxEl = document.querySelector('.temp_max')
 const tempMinEl = document.querySelector('.temp_min')
-const dateTimeEl = document.querySelector('.date-time')
+const userTimeEl = document.querySelector('.user-time')
 
 let temp
 let temp_max
 let temp_min
+let user_time
 
 printClock()
+userTime();
 refreshWeather()
 
 
@@ -20,24 +23,34 @@ refreshWeather()
 // login
 loginButton.addEventListener('click', async e => {
   const result = await firebase.auth().signInWithPopup(provider).then(function(result) {
-    var token = result.credential.accessToken; // 토큰 값을 가지고 온다.
-    // console.log(token)
-    var user = result.user; // 구글 계정 정보.
-    // console.log(user)
-  })
-  loginButton.classList.add('hidden')
-  weatherButton.classList.remove('hidden')
+      let token = result.credential.accessToken; // 토큰 값을 가지고 온다.
+      // console.log(token)
+      let user = result.user; // 구글 계정 정보.
+      // console.log(user)
+    })
+    // loginButton.classList.add('hidden')
+    // logoutButton.classList.remove('hidden')
   weatherAdd()
+
+  // 날씨 버튼 시간
+  weatherButton.addEventListener('mouseover', e => {
+    weatherButton.textContent = user_time;
+  })
+  weatherButton.addEventListener('mouseout', e => {
+    weatherButton.textContent = '날씨 갱신';
+  })
 
   // 날씨 버튼 클릭
   weatherButton.addEventListener('click', e => {
-    weatherUpdate()
+    weatherAdd()
   })
 
 
 
   // 초기 위치 추가.
   async function weatherAdd() {
+    loginButton.classList.add('hidden')
+    logoutButton.classList.remove('hidden')
     const uid = firebase.auth().currentUser.uid;
     await firebase.database().ref(`/users/${uid}/weather`).set({
       temp: temp,
@@ -46,15 +59,25 @@ loginButton.addEventListener('click', async e => {
     });
   }
   // 위치 update
-  async function weatherUpdate() {
-    const uid = firebase.auth().currentUser.uid;
-    await firebase.database().ref(`/users/${uid}/weather`).update({
-      temp: temp,
-      temp_max: temp_max,
-      temp_min: temp_min
-    })
-  }
+  // async function weatherUpdate() {
+  //   const uid = firebase.auth().currentUser.uid;
+  //   await firebase.database().ref(`/users/${uid}/weather`).update({
+  //     temp: temp,
+  //     temp_max: temp_max,
+  //     temp_min: temp_min
+  //   })
+  // }
 
+  // 로그아웃
+  logoutButton.addEventListener('click', async e => {
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    })
+
+    loginButton.classList.remove('hidden')
+    logoutButton.classList.add('hidden')
+    refreshWeather();
+  })
 
 })
 
@@ -74,18 +97,39 @@ async function refreshWeather() {
     tempMaxEl.textContent = userWeather.main.temp_max
     temp_min = userWeather.main.temp_min
     tempMinEl.textContent = userWeather.main.temp_min
+
+    const userTemp = userWeather.main.temp;
+    const userWeatherEmoji = document.querySelector('.weather-emoji');
+    if (userTemp <= -15) {
+      userWeatherEmoji.textContent = '☠️';
+    } else if (userTemp > -15 && userTemp <= 13) {
+      userWeatherEmoji.textContent = '😱';
+    } else if (userTemp > -13 && userTemp <= -10) {
+      userWeatherEmoji.textContent = '🤬';
+    } else if (userTemp > -10 && userTemp <= -6) {
+      userWeatherEmoji.textContent = '😡';
+    } else if (userTemp > -6 && userTemp <= -3) {
+      userWeatherEmoji.textContent = '🤢';
+    } else {
+      userWeatherEmoji.textContent = '😌';
+    }
   });
+
 }
 
 firebase.auth().onAuthStateChanged(function(user) { //onAuthStateChanged를 사용해서 사용자의 정보를 가지고 올 수 있다.
   if (user) { //로그인 상태 유지시.
-    loginButton.classList.add('hidden')
-    tempEl.textContent = userWeather.main.temp
-    tempMaxEl.textContent = userWeather.main.temp_max
-    tempMinEl.textContent = userWeather.main.temp_min
+    tempEl.textContent = temp
+    tempMaxEl.textContent = temp_max
+    tempMinEl.textContent = temp_min
   }
 });
 
+// 실시간 사용자 시간
+function userTime() {
+  let time = new Date();
+  user_time = time.toLocaleString()
+}
 
 
 // 실시간 시간
