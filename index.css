@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url("normalize.css");
 *, *::before, *::after {
@@ -79,22 +80,24 @@ a:hover, a:focus {
   margin: 0, auto;
 }
 .container {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
   color: #f8f9fa;
   text-align: center;
   background-image: url(/img/ice-bg.jpg);
   background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   /* width: 400px; */
   max-height: 100%;
-  min-width: 380px;
-  max-width: 380px;
+  min-width: 320px;
+  max-width: 640px;
   text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
 }
 h1 {
+  font-family: 'Hanna';
   font-size: 2rem;
   padding: 20px 0px 0px 0px;
 }
@@ -109,9 +112,9 @@ h1 {
   font-size: 5rem;
 }
 .weather-emoji {
-  line-height: 1.5;
+  line-height: 1.4;
   margin-top: -30px;
-  font-size: 18rem;
+  font-size: 20rem;
 }
 .temp-title {
   font-size: 3rem;
@@ -128,8 +131,8 @@ h1 {
   max-width: 300px;
 }
 .temp_min {
-  line-height: 0.5;
-  font-size: 14rem;
+  line-height: 0.3;
+  font-size: 15rem;
 }
 .temp-title, .temp {
   display: inline-block;
@@ -147,6 +150,9 @@ h1 {
   border-radius: 4px;
   color: #f8f9fa;
   cursor: pointer;
+}
+.logout-button {
+  background-color: #d73013;
 }
 .weather-button {
   margin-left: 10px;
