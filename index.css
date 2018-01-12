@@ -4,3 +4,20 @@
 .weather {
   display: none;
 }
+.login-button {
+  font-size: 1em;
+  color: #edf2ff;
+  background-color: #4c6ef5;
+  padding: 1em 2em 1em 2em;
+}
+.weather-button {
+  text-align: center;
+  font-size: 1em;
+  color: #e5dbff;
+  background-color: #5f3dc4;
+  padding: 1em 2em 1em 2em;
+}
+.user-weather {
+  color: #212529;
+  font-size: 10em;
+}

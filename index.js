@@ -36,7 +36,7 @@ loginButton.addEventListener('click', async e => {
     // 위치 update
     async function weatherUpdate() {
       const uid = firebase.auth().currentUser.uid;
-      await firebase.database().ref(`/users/${uid}/weather`).updata({
+      await firebase.database().ref(`/users/${uid}/weather`).update({
         lat: a,
         lon: b,
       })
@@ -60,8 +60,28 @@ async function weatherGet() {
       const userWeather = await res.json()
       console.log(userWeather)
       const userWeatherEl = document.createElement('div')
+      userWeatherEl.classList.add('user-weather')
       userWeatherEl.textContent = Math.round(userWeather.main.temp)
-      tempEl.appendChild(userWeatherEl)
+
+      const userTemp = userWeather.main.temp;
+      const userWeatherEmoji = document.createElement('div');
+      userWeatherEmoji.classList.add('user-weather-emoji');
+      if (userTemp <= -15) {
+        userWeatherEmoji.textContent = '☠️';
+      } else if (userTemp > -15 || userTemp <= 13) {
+        userWeatherEmoji.textContent = '😱';
+      } else if (userTemp > -13 || userTemp <= -10) {
+        userWeatherEmoji.textContent = '🤬';
+      } else if (userTemp > -10 || userTemp <= -6) {
+        userWeatherEmoji.textContent = '😡';
+      } else if (userTemp > -6 || userTemp <= -3) {
+        userWeatherEmoji.textContent = '🤢';
+      } else {
+        userWeatherEmoji.textContent = '😌';
+      }
+
+      tempEl.appendChild(userWeatherEl);
+      userWeatherEl.appendChild(userWeatherEmoji);
     });
   })
 }
