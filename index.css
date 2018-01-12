@@ -1,12 +1,102 @@
-.hidden {
-  display: none;
+@charset "utf-8";
+@import url("normalize.css");
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-.weather {
-  display: none;
+
+/* CSS Reset */
+
+html, body, button, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-#clock {
-  font-size: 30px;
+ul {
+  list-style: none;
 }
-.temp-list {
-  display: flex;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 본문 스타일 */
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Noto Sans Regular', sans-serif;
+  font-size: 1.4rem;
+  color: #181818;
+  background-color: #fff;
+}
+
+/* 링크 스타일 */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #f00;
+}
+
+/* 숨긴 콘텐츠 */
+
+.readable-hidden, legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0)
+}
+
+/* 공통 스타일 */
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* 모바일  */
+
+@media screen and (max-width:999px) {
+  .hidden {
+    display: none;
+  }
+  .weather {
+    display: none;
+  }
+  #clock {
+    font-size: 30px;
+  }
+  .temp-list {
+    display: flex;
+  }
+}
+
+/* 웹 */
+
+@media screen and (min-width:1000px) {
+  .hidden {
+    display: none;
+  }
+  .weather {
+    display: none;
+  }
+  #clock {
+    font-size: 30px;
+  }
+  .temp-list {
+    display: flex;
+  }
 }

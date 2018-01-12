@@ -31,7 +31,7 @@ loginButton.addEventListener('click', async e => {
 
   // 날씨 버튼 클릭
   weatherButton.addEventListener('click', e => {
-
+    weatherUpdate()
   })
 
 
@@ -39,28 +39,19 @@ loginButton.addEventListener('click', async e => {
   // 초기 위치 추가.
   async function weatherAdd() {
     const uid = firebase.auth().currentUser.uid;
-    // tempEl.innerHTML = '';
-    // navigator.geolocation.getCurrentPosition(async function(position) {
-    //   let lat = Math.round(position.coords.latitude * 100) / 100
-    //   let lon = Math.round(position.coords.longitude * 100) / 100
-
-    //   const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=kr&APPID=${OWM_API_KEY}`) // 기본값이 get
-    //   const userWeather = await res.json()
-    //   tempEl.textContent = userWeather.main.temp
-
     await firebase.database().ref(`/users/${uid}/weather`).set({
       temp: temp,
       temp_max: temp_max,
       temp_min: temp_min
-        // })
     });
   }
   // 위치 update
   async function weatherUpdate() {
     const uid = firebase.auth().currentUser.uid;
     await firebase.database().ref(`/users/${uid}/weather`).update({
-      lat: a,
-      lon: b,
+      temp: temp,
+      temp_max: temp_max,
+      temp_min: temp_min
     })
   }
 
@@ -86,7 +77,14 @@ async function refreshWeather() {
   });
 }
 
-
+firebase.auth().onAuthStateChanged(function(user) { //onAuthStateChanged를 사용해서 사용자의 정보를 가지고 올 수 있다.
+  if (user) { //로그인 상태 유지시.
+    loginButton.classList.add('hidden')
+    tempEl.textContent = userWeather.main.temp
+    tempMaxEl.textContent = userWeather.main.temp_max
+    tempMinEl.textContent = userWeather.main.temp_min
+  }
+});
 
 
 
