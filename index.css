@@ -74,196 +74,87 @@ a:hover, a:focus {
 
 /* 모바일  */
 
-@media screen and (max-width:1000px) {
-  .wrapper {
-    height: 100%;
-    margin: 0, auto;
-  }
-  .container {
-    overflow: hidden;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #f8f9fa;
-    text-align: center;
-    background-image: url(/img/ice-bg.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    /* width: 400px; */
-    max-height: 100%;
-    min-width: 380px;
-    max-width: 380px;
-    text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
-  }
-  h1 {
-    font-size: 2rem;
-    padding: 20px 0px 0px 0px;
-  }
-  .hidden {
-    display: none;
-  }
-  .weather {
-    display: none;
-  }
-  #clock {
-    margin-top: 8px;
-    font-size: 5rem;
-  }
-  .weather-emoji {
-    line-height: 1.5;
-    margin-top: -30px;
-    font-size: 18rem;
-  }
-  .temp-title {
-    font-size: 3rem;
-    padding-right: 15px;
-  }
-  .temp-list {
-    /* display: flex;
-    flex-direction: column; */
-    margin-top: 10px;
-    /* margin-bottom: 50px; */
-    font-size: 3rem;
-    color: #f8f9fa;
-    margin: 0 auto;
-    max-width: 300px;
-  }
-  .temp_min {
-    line-height: 0.5;
-    font-size: 14rem;
-  }
-  .temp-title, .temp {
-    display: inline-block;
-  }
-  .buttons {
-    /* margin: 0 auto; */
-    margin: 35px 0px 45px 0px;
-  }
-  .login-button {
-    background-color: #13bcd7;
-    position: absolute;
-    top: 8px;
-    left: 5px;
-    width: 50px;
-    border-radius: 10px;
-    color: #f8f9fa;
-    cursor: pointer;
-  }
-  .weather-button {
-    margin-left: 10px;
-    background-color: #BC734C;
-    padding: 10px 40px 12px 40px;
-    color: #f8f9fa;
-    font-size: 2rem;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
-    cursor: pointer;
-  }
-  .logout-button {
-    position: absolute;
-    top: 8px;
-    left: 5px;
-    width: 60px;
-    background-color: #D0021b;
-    border-radius: 10px;
-    color: #f8f9fa;
-    cursor: pointer;
-  }
+.wrapper {
+  height: 100%;
+  margin: 0, auto;
 }
-
-/* 웹 */
-
-@media screen and (min-width:1001px) {
-  .wrapper {
-    /* height: 100%; */
-    width: 100%;
-  }
-  .container {
-    overflow: hidden;
-    position: relative;
-    color: #f8f9fa;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background-image: url(/img/ice-bg.jpg);
-    background-repeat: no-repeat;
-    /* width: 400px; */
-    height: 100%;
-    width: 720px;
-    text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
-  }
-  h1 {
-    padding: 20px 0px 0px 0px;
-  }
-  .hidden {
-    display: none;
-  }
-  .weather {
-    display: none;
-  }
-  #clock {
-    margin-top: 8px;
-    font-size: 5rem;
-  }
-  .weather-emoji {
-    line-height: 1.5;
-    margin-top: -30px;
-    font-size: 18rem;
-  }
-  .temp-title {
-    font-size: 3rem;
-  }
-  .temp-list {
-    /* display: flex;
+.container {
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f8f9fa;
+  text-align: center;
+  background-image: url(/img/ice-bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* width: 400px; */
+  max-height: 100%;
+  min-width: 380px;
+  max-width: 380px;
+  text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
+}
+h1 {
+  font-size: 2rem;
+  padding: 20px 0px 0px 0px;
+}
+.hidden {
+  display: none;
+}
+.weather {
+  display: none;
+}
+#clock {
+  margin-top: 8px;
+  font-size: 5rem;
+}
+.weather-emoji {
+  line-height: 1.5;
+  margin-top: -30px;
+  font-size: 18rem;
+}
+.temp-title {
+  font-size: 3rem;
+  padding-right: 15px;
+}
+.temp-list {
+  /* display: flex;
     flex-direction: column; */
-    margin-top: 10px;
-    /* margin-bottom: 50px; */
-    font-size: 3rem;
-    color: #f8f9fa;
-    margin: 0 auto;
-    max-width: 300px;
-  }
-  .temp_min {
-    line-height: 0.5;
-    font-size: 14rem;
-  }
-  .temp-title, .temp {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  .buttons {
-    /* margin: 0 auto; */
-    margin: 35px 0px 50px 0px;
-  }
-  .login-button {
-    background-color: #13bcd7;
-    position: absolute;
-    top: 8px;
-    left: 5px;
-    width: 50px;
-    border-radius: 10px;
-    /* padding: 5px 8px; */
-    color: #f8f9fa;
-    cursor: pointer;
-  }
-  .weather-button {
-    margin-left: 10px;
-    background-color: #BC734C;
-    padding: 10px 40px 12px 40px;
-    color: #f8f9fa;
-    font-size: 2rem;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
-    cursor: pointer;
-  }
-  .logout-button {
-    position: absolute;
-    top: 8px;
-    left: 5px;
-    width: 60px;
-    background-color: #D0021b;
-    border-radius: 10px;
-    color: #f8f9fa;
-    cursor: pointer;
-  }
+  margin-top: 10px;
+  /* margin-bottom: 50px; */
+  font-size: 3rem;
+  color: #f8f9fa;
+  margin: 0 auto;
+  max-width: 300px;
+}
+.temp_min {
+  line-height: 0.5;
+  font-size: 14rem;
+}
+.temp-title, .temp {
+  display: inline-block;
+}
+.buttons {
+  /* margin: 0 auto; */
+  margin: 35px 0px 45px 0px;
+}
+.button_small {
+  background-color: #13bcd7;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  padding: 2px 6px 4px 6px;
+  border-radius: 4px;
+  color: #f8f9fa;
+  cursor: pointer;
+}
+.weather-button {
+  margin-left: 10px;
+  background-color: #BC734C;
+  padding: 10px 40px 12px 40px;
+  color: #f8f9fa;
+  font-size: 2rem;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
+  cursor: pointer;
 }
