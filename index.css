@@ -29,12 +29,14 @@ table {
 
 html {
   font-size: 10px;
+  height: 100%;
 }
 body {
   font-family: 'Spoqa Han Sans', sans-serif;
   font-size: 1.4rem;
   color: #181818;
   background-color: #fff;
+  height: 100%;
 }
 
 /* 링크 스타일 */
@@ -74,20 +76,34 @@ a:hover, a:focus {
 
 @media screen and (max-width:1000px) {
   .wrapper {
+<<<<<<< HEAD
     margin: 0, auto;
     background-image: url(/img/ice-bg.jpg);
     height: 100%;
     background-size: 100%;
+=======
+    height: 100%;
+    margin: 0, auto;
+>>>>>>> upstream/master
   }
   .container {
     position: relative;
     color: #f8f9fa;
     text-align: center;
+<<<<<<< HEAD
     /* background-repeat: no-repeat; */
     /* width: 400px; */
     /* height: 100%; */
     min-width: 380px;
     max-width: 1000px;
+=======
+    background-image: url(/img/ice-bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* width: 400px; */
+    height: 100%;
+    min-width: 380px;
+>>>>>>> upstream/master
     text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
   }
   h1 {
@@ -122,17 +138,25 @@ a:hover, a:focus {
     max-width: 300px;
   }
   .temp_min {
+<<<<<<< HEAD
     line-height: 0.4;
+=======
+    line-height: 0.5;
+>>>>>>> upstream/master
     font-size: 14rem;
   }
   .temp-title, .temp {
     display: inline-block;
+<<<<<<< HEAD
     padding-left: 20px;
+=======
+>>>>>>> upstream/master
   }
   .buttons {
     /* margin: 0 auto; */
     margin: 35px 0px 45px 0px;
   }
+<<<<<<< HEAD
   .button {
     padding: 10px 40px 12px 40px;
     color: #f8f9fa;
@@ -142,16 +166,69 @@ a:hover, a:focus {
   }
   .login-button {
     background-color: #13bcd7;
+=======
+  .login-button {
+    background-color: #13bcd7;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 50px;
+    border-radius: 10px;
+    color: #f8f9fa;
+    cursor: pointer;
+>>>>>>> upstream/master
   }
   .weather-button {
     margin-left: 10px;
     background-color: #BC734C;
+<<<<<<< HEAD
+=======
+    padding: 10px 40px 12px 40px;
+    color: #f8f9fa;
+    font-size: 2rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
+    cursor: pointer;
+  }
+  .logout-button {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 60px;
+    background-color: #D0021b;
+    border-radius: 10px;
+    color: #f8f9fa;
+    cursor: pointer;
+>>>>>>> upstream/master
   }
 }
 
 /* 웹 */
 
 @media screen and (min-width:1001px) {
+<<<<<<< HEAD
+=======
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  .container {
+    position: relative;
+    color: #f8f9fa;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-image: url(/img/ice-bg.jpg);
+    background-repeat: no-repeat;
+    /* width: 400px; */
+    height: 100%;
+    width: 720px;
+    text-shadow: 1px 1px 4px rgba(50, 50, 100, 0.6);
+  }
+  h1 {
+    padding: 10px;
+  }
+>>>>>>> upstream/master
   .hidden {
     display: none;
   }
@@ -159,9 +236,66 @@ a:hover, a:focus {
     display: none;
   }
   #clock {
-    font-size: 30px;
+    margin-top: 8px;
+    font-size: 5rem;
+  }
+  .weather-emoji {
+    line-height: 1.5;
+    margin-top: -30px;
+    font-size: 18rem;
+  }
+  .temp-title {
+    font-size: 3rem;
   }
   .temp-list {
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
+    margin-top: 10px;
+    /* margin-bottom: 50px; */
+    font-size: 3rem;
+    color: #f8f9fa;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .temp_min {
+    line-height: 0.5;
+    font-size: 14rem;
+  }
+  .temp-title, .temp {
+    display: inline-block;
+  }
+  .buttons {
+    /* margin: 0 auto; */
+    margin: 35px 0px 45px 0px;
+  }
+  .login-button {
+    background-color: #13bcd7;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 50px;
+    border-radius: 10px;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
+  .weather-button {
+    margin-left: 10px;
+    background-color: #BC734C;
+    padding: 10px 40px 12px 40px;
+    color: #f8f9fa;
+    font-size: 2rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.8);
+    cursor: pointer;
+  }
+  .logout-button {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 60px;
+    background-color: #D0021b;
+    border-radius: 10px;
+    color: #f8f9fa;
+    cursor: pointer;
   }
 }
