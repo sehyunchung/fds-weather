@@ -68,13 +68,13 @@ async function weatherGet() {
       userWeatherEmoji.classList.add('user-weather-emoji');
       if (userTemp <= -15) {
         userWeatherEmoji.textContent = '☠️';
-      } else if (userTemp > -15 || userTemp <= 13) {
+      } else if (userTemp > -15 && userTemp <= 13) {
         userWeatherEmoji.textContent = '😱';
-      } else if (userTemp > -13 || userTemp <= -10) {
+      } else if (userTemp > -13 && userTemp <= -10) {
         userWeatherEmoji.textContent = '🤬';
-      } else if (userTemp > -10 || userTemp <= -6) {
+      } else if (userTemp > -10 && userTemp <= -6) {
         userWeatherEmoji.textContent = '😡';
-      } else if (userTemp > -6 || userTemp <= -3) {
+      } else if (userTemp > -6 && userTemp <= -3) {
         userWeatherEmoji.textContent = '🤢';
       } else {
         userWeatherEmoji.textContent = '😌';
