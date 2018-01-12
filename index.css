@@ -91,7 +91,7 @@ a:hover, a:focus {
   background-repeat: no-repeat;
   height: 100%;
   width: 320px;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-shadow: 1px 1px 10px rgba(12, 82, 92, 0.6);
 }
 h1 {
